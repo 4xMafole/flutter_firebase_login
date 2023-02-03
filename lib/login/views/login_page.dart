@@ -4,7 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_firebase_login/login/cubit/login_cubit.dart';
-import 'package:flutter_firebase_login/login/view/login_form.dart';
+import 'package:flutter_firebase_login/login/views/login_form.dart';
 
 class LoginPage extends StatelessWidget {
   const LoginPage({super.key});

@@ -20,6 +20,8 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   font_awesome_flutter: ^10.3.0
+  form_inputs:
+    path: packages/form_inputs
   formz: ^0.4.1
   google_fonts: ^4.0.1
   intl: ^0.17.0

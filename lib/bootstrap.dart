@@ -1,8 +1,12 @@
 import 'dart:async';
 import 'dart:developer';
 
+import 'package:authentication_repository/authentication_repository.dart';
 import 'package:bloc/bloc.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_firebase_login/app/app.dart';
+import 'package:flutter_firebase_login/firebase_options.dart';
 
 class AppBlocObserver extends BlocObserver {
   @override
@@ -18,15 +22,22 @@ class AppBlocObserver extends BlocObserver {
   }
 }
 
-Future<void> bootstrap(FutureOr<Widget> Function() builder) async {
+Future<void> bootstrap() async {
   FlutterError.onError = (details) {
     log(details.exceptionAsString(), stackTrace: details.stack);
   };
 
   Bloc.observer = AppBlocObserver();
 
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
+
+  final authenticationRepository = AuthenticationRepository();
+  await authenticationRepository.user.first;
+
   await runZonedGuarded(
-    () async => runApp(await builder()),
+    () async => runApp(App(authenticationRepository: authenticationRepository)),
     (error, stackTrace) => log(error.toString(), stackTrace: stackTrace),
   );
 }

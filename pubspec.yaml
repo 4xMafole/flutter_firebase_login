@@ -8,13 +8,20 @@ environment:
   flutter: 3.3.6
 
 dependencies:
+  authentication_repository:
+    path: packages/authentication_repository
   bloc: ^8.1.0
+  equatable: ^2.0.5
   firebase_core: ^2.4.1
+  flow_builder: ^0.0.9
   flutter:
     sdk: flutter
   flutter_bloc: ^8.1.1
   flutter_localizations:
     sdk: flutter
+  font_awesome_flutter: ^10.3.0
+  formz: ^0.4.1
+  google_fonts: ^4.0.1
   intl: ^0.17.0
 
 dev_dependencies:
@@ -27,3 +34,5 @@ dev_dependencies:
 flutter:
   uses-material-design: true
   generate: true
+  assets:
+    - assets/

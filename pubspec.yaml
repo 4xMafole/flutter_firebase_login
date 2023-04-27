@@ -23,7 +23,7 @@ dependencies:
   form_inputs:
     path: packages/form_inputs
   formz: ^0.4.1
-  google_fonts: ^4.0.1
+  google_fonts: ^4.0.4
   intl: ^0.17.0
 
 dev_dependencies:
